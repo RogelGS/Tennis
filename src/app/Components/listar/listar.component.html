@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h2>Listar Tennis</h2>
+                </div>
+                <div class="col form-group">
+                    <input type="text" class="form-control"  placeholder="Buscar" [(ngModel)]="search" (keyup)="buscar()">
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Modelo</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Num. Inicial</th>
+                        <th>Num. Final</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let t of tenni">
+                        <td>{{t.id}}</td>
+                        <td>{{t.modelo}}</td>
+                        <td>{{t.marca}}</td>
+                        <td>{{t.precio}}</td>
+                        <td>{{t.num_ini}}</td>
+                        <td>{{t.num_fin}}</td>
+                        <td><button class="btn btn-warning" (click)="editar(t)">Editar</button></td>
+                        <td><button class="btn btn-danger" (click)="eliminar(t)">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col">
+                <!-- <p>Hay en total: <b>{{count}}</b> {{count == 1 ? "registro" : "registros"}}</p> -->
+            </div>
+        </div>
+    </div>
+</div>
